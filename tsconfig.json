@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "noImplicitAny": false,
+    "lib": [
+      "dom",
+      "esnext",
+    ],
+    "plugins": [
+      {
+        "name": "typescript-deno-plugin",
+        "enable": true
+      }
+    ]
+  }
+}
