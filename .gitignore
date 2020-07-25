@@ -1,0 +1,5 @@
+.attain/
+dist/
+
+# macOS Files
+.DS_Store

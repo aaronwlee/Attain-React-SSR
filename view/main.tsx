@@ -1,44 +1,55 @@
-import { React } from "../deps.ts";
-import Home from "./pages/home.tsx";
-import RouterContext from "./components/Router.tsx";
-import Index from "./pages/index.tsx";
+import { React, MatUI, useRouter, useDocument } from "./deps.tsx";
+import theme from "./resources/theme.tsx";
 
+export default function Main({ SSR }: any) {
+  const { pages, pageProps } = SSR.attainProps;
+  const { pathname } = useRouter();
 
-export default function Main({ ssrpathname }: any) {
-  const [pathname, setPathname] = React.useState(ssrpathname ? ssrpathname : (window as any).location.pathname);
-
-  (window as any).onpopstate = function (e: any) {
-    if(e.state) {
-      console.log(e.state)
-      setPathname(e.state.value)
-    }
+  // assign error page
+  let Component = () => {
+    return (
+      <div>
+        Error
+      </div>
+    );
   };
 
   React.useEffect(() => {
-    console.log("pathname", pathname)
-  }, [pathname])
+    const document = useDocument();
+    const jssStyles = document && document.querySelector("#jss-server-side");
+    if (jssStyles) {
+      jssStyles.parentElement.removeChild(jssStyles);
+    }
+  }, []);
 
-  let Component = <h2>Error</h2>
+  // handling the client-side-route
+  if (pages[pathname]) {
+    Component = pages[pathname].Component;
+  }
 
-  if (pathname === "/home") {
-    Component = <Home />;
-  }
-  if (pathname === "/") {
-    Component = <Index />;
-  }
+  console.log("sadasdad", pathname);
 
   return (
     <>
-      <RouterContext.Provider value={{
-        pathname: ssrpathname ? ssrpathname : (window as any).location.pathname,
-        push: (value: string) => {
-          const anyWindow = window as any;
-          anyWindow.history.pushState({ value }, "", value);
-          setPathname(value)
-        }
-      }}>
-        {Component}
-      </RouterContext.Provider>
+      <MatUI.ThemeProvider theme={theme}>
+        <Component {...pageProps} />
+      </MatUI.ThemeProvider>
     </>
-  )
+  );
 }
+
+Main.ServerSideAttain = async ({ req, res, pages, isServer }: any) => {
+  const pathname = req.url.pathname;
+  const Component = pages[pathname].Component;
+
+  const pageProps = Component.ServerSideAttain
+    ? await Component.ServerSideAttain({ req, res, pages, isServer })
+    : {};
+
+  return {
+    attainProps: {
+      pages,
+      pageProps,
+    },
+  };
+};
