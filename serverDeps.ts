@@ -5,4 +5,4 @@ export {
   logger,
   security,
   ViewEngine,
-} from "https://deno.land/x/attain@cli-beta-0.2/mod.ts";
+} from "https://deno.land/x/attain/mod.ts";
