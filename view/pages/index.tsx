@@ -15,7 +15,7 @@ export default function Index() {
         <Grid container justify={"center"}>
           <Grid item xs={10} sm={6} md={4} lg={3}>
             <a href="https://github.com/aaronwlee/Attain" target="_blank">
-              <img style={{ width: "100%" }} src="./Attain.png" />
+              <img style={{ width: "100%" }} src="https://github.com/aaronwlee/Attain/raw/master/Attain.png?raw=true" />
             </a>
           </Grid>
         </Grid>
