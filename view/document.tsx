@@ -21,7 +21,8 @@ export default function Document(
             __html: `
         body {
           font-family: "Roboto", sans-serif;
-        }
+          margin: 0px;
+        },
         `,
           }}
         />

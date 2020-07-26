@@ -8,6 +8,11 @@ import ReactDOMServer from "https://jspm.dev/react-dom@16.13.1/server";
 import ReactDOM from "https://jspm.dev/react-dom@16.13.1";
 
 import MatUI from "https://jspm.dev/@material-ui/core@4.11.0";
+import MenuIconComponent from "https://jspm.dev/@material-ui/icons@4.9.1/Menu";
+import ForwardIconComponent from "https://jspm.dev/@material-ui/icons@4.9.1/Forward";
+
+const MenuIcon = MenuIconComponent.default;
+const ForwardIcon = ForwardIconComponent.default;
 
 import { useRouter } from "https://deno.land/x/attain@1.0.5/react/AttainRouter.js";
 import {
@@ -27,4 +32,6 @@ export {
   addMeta,
   addScript,
   setTitle,
+  MenuIcon,
+  ForwardIcon,
 };

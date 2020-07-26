@@ -2,7 +2,7 @@ import { MatUI } from "../deps.tsx";
 const theme = MatUI.createMuiTheme({
   palette: {
     primary: {
-      main: "#556cd6",
+      main: "#3F51B5",
     },
     secondary: {
       main: "#19857b",
