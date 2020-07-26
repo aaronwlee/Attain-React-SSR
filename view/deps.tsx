@@ -9,13 +9,13 @@ import ReactDOM from "https://jspm.dev/react-dom@16.13.1";
 
 import MatUI from "https://jspm.dev/@material-ui/core@4.11.0";
 
-import { useRouter } from "https://deno.land/x/attain@1.0.4/react/AttainRouter.js";
+import { useRouter } from "https://deno.land/x/attain@1.0.5/react/AttainRouter.js";
 import {
   useDocument,
   addMeta,
   addScript,
   setTitle,
-} from "https://deno.land/x/attain@1.0.4/react/AttainReactUtils.js";
+} from "https://deno.land/x/attain@1.0.5/react/AttainReactUtils.js";
 
 export {
   React,
