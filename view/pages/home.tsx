@@ -32,7 +32,7 @@ export default function Home({ data }: any) {
 }
 
 Home.ServerSideAttain = async ({ req, res, pages, isServer }: any) => {
-  const response: any = await fetch("http://localhost:4000/api/user");
+  const response: any = await fetch("http://localhost:3000/api/user");
   const data = await response.json();
 
   return {

@@ -1,7 +1,7 @@
 import { React, MatUI, ReactDOMServer } from "./deps.tsx";
 
 export default function Document(
-  { PreloadScript, MainScript, styled, Main, headers }: any,
+  { MainScript, styled, Main, headers }: any,
 ) {
   return (
     <html>
@@ -26,7 +26,6 @@ export default function Document(
           }}
         />
         {headers}
-        <PreloadScript />
         {styled}
       </head>
       <body>
@@ -40,7 +39,7 @@ export default function Document(
 }
 
 Document.ServerSideAttain = async (
-  { PreloadScript, MainScript, Main }: any,
+  { MainScript, Main }: any,
 ) => {
   const sheets = new MatUI.ServerStyleSheets();
 
@@ -50,7 +49,6 @@ Document.ServerSideAttain = async (
     );
 
     return {
-      PreloadScript,
       MainScript,
       Main: Renderd,
       styled: [
