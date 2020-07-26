@@ -19,6 +19,7 @@ export default function Layout({ children }: any) {
   const routerConsts: any = {
     "/": "Home",
     "/data-fetching": "Data Fetching",
+    "/style-guide": "Style Guide"
   }
 
   return (
@@ -40,7 +41,7 @@ export default function Layout({ children }: any) {
           </Toolbar>
         </AppBar>
       </Grid>
-      <Grid style={{ marginTop: 40 }} item xs={12}>
+      <Grid style={{ marginTop: 60 }} item xs={12}>
         {children}
       </Grid>
 

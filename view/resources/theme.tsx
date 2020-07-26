@@ -5,7 +5,7 @@ const theme = MatUI.createMuiTheme({
       main: "#3F51B5",
     },
     secondary: {
-      main: "#19857b",
+      main: "#E91E63",
     },
     error: {
       main: "#19857b",

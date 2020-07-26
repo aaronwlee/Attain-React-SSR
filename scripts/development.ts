@@ -17,7 +17,7 @@ function runWorker() {
 const startWatcher = async (path: string) => {
   const watcher = Deno.watchFs(path);
   for await (const event of watcher) {
-    console.log("\nRestarting due to file change detection. :)")
+    console.log("\nRestarting due to the file has been changed. :)")
     if (worker) {
       if (Deno.build.os === "windows") {
         worker.close()

@@ -7,15 +7,17 @@ const {
 
 export default function Index() {
   const [count, setCount] = React.useState(1);
-  setTitle("React-Attain App - Index");
+  setTitle("React-Attain App - Welcome");
 
   return (
     <Layout>
       <Grid style={{ textAlign: "center" }} container justify={"center"}>
-        <Grid item xs={10} sm={6} >
-          <a href="https://github.com/aaronwlee/Attain" target="_blank">
-            <img style={{ width: "100%" }} src="./Attain.png" />
-          </a>
+        <Grid container justify={"center"}>
+          <Grid item xs={10} sm={6} md={4} lg={3}>
+            <a href="https://github.com/aaronwlee/Attain" target="_blank">
+              <img style={{ width: "100%" }} src="./Attain.png" />
+            </a>
+          </Grid>
         </Grid>
         <Grid item xs={10} sm={8}>
           <h1>Welcome to the Attain React Server Side Rendering</h1>

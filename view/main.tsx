@@ -27,8 +27,6 @@ export default function Main({ SSR }: any) {
     Component = pages[pathname].Component;
   }
 
-  console.log("sadasdad", pathname);
-
   return (
     <>
       <MatUI.ThemeProvider theme={theme}>
@@ -40,6 +38,9 @@ export default function Main({ SSR }: any) {
 
 Main.ServerSideAttain = async ({ req, res, pages, isServer }: any) => {
   const pathname = req.url.pathname;
+  if (!pages[pathname]) {
+    res.redirect("/404");
+  }
   const Component = pages[pathname].Component;
 
   const pageProps = Component.ServerSideAttain
