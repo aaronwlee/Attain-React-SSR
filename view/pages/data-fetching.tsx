@@ -60,7 +60,7 @@ export default function DataFetching({ data }: any) {
   );
 }
 
-DataFetching.ServerSideAttain = async ({ req, res, pages, isServer }: any) => {
+DataFetching.ServerSideAttain = async () => {
   const response: any = await fetch("http://localhost:3000/api/user");
   const data = await response.json();
 

@@ -19,7 +19,8 @@ export default function Layout({ children }: any) {
   const routerConsts: any = {
     "/": "Home",
     "/data-fetching": "Data Fetching",
-    "/style-guide": "Style Guide"
+    "/style-guide": "Style Guide",
+    "/dynamic/1": "Dynamic Routing"
   }
 
   return (
