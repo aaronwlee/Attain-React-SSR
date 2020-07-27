@@ -26,7 +26,7 @@ export default function ID({ data }: any) {
         </Grid>
 
         <Grid style={{ marginBottom: 50 }} container justify={"center"}>
-          <p>You can also find the search params in query values</p>
+          <p>You can also find the search params in router query values</p>
         </Grid>
         <Grid style={{ marginBottom: 50 }} container justify={"center"}>
           {
