@@ -1,11 +1,5 @@
 {
   "compilerOptions": {
-    "lib": ["dom", "dom.iterable", "esnext", "deno.ns", "deno.unstable"],
-    "plugins": [
-      {
-        "name": "typescript-deno-plugin",
-        "enable": true
-      }
-    ]
+    "allowJs": false
   }
 }

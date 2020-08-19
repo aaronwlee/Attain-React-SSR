@@ -14,13 +14,13 @@ import ForwardIconComponent from "https://jspm.dev/@material-ui/icons@4.9.1/Forw
 const MenuIcon = MenuIconComponent.default;
 const ForwardIcon = ForwardIconComponent.default;
 
-import { useRouter } from "https://deno.land/x/attain@1.0.10/react/AttainRouter.js";
+import { useRouter } from "https://deno.land/x/attain@1.1.0/react/AttainRouter.js";
 import {
   useDocument,
   addMeta,
   addScript,
   setTitle,
-} from "https://deno.land/x/attain@1.0.10/react/AttainReactUtils.js";
+} from "https://deno.land/x/attain@1.1.0/react/AttainReactUtils.js";
 
 export {
   React,
